@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+
+    .container{
+        /* border: 2px solid black; */
+        width: 290px;
+        position: sticky;
+        box-shadow: 16px 7px 13px 10px #7e2c2c;
+        border-radius: 14px;
+        height: 300px;
+        background: linear-gradient(rgb(161, 163, 161) , rgb(212, 209, 209));
+        margin: 95px 373px;
+    padding: 93px 91px;
+    }
+    .title{
+        margin-bottom: 12px;
+        font-size: 2.3rem;
+        text-align: center;
+        width: 300px;
+        color: rgb(0, 0, 0);
+        /* border: 2px solid red; */
+    }
+    input[type="button"]{
+        background-color: black;
+        cursor: pointer;
+        box-shadow: 2px 2px 2px 2px rgb(138, 253, 247);
+        padding: 13px 19px;
+        border-radius: 40%;
+        font-size: 1.4rem;
+        width: 100%;
+        height: 100%;
+        color: white;
+    }
+    input[type="text"]{
+        background: linear-gradient(rgb(145, 137, 137),rgb(255, 255, 211));
+        width: 180px;
+        font-size: 1.4rem;
+        height: 26px;
+        border-radius: 12px;
+        padding: 13px 19px;
+    }
+</style>
+<body>
+    <div class="container">
+    <div class="title">Calculator</div>
+    <table>
+        <tr>
+            <td colspan="3"><input type="text" id="result"></td>
+            <td><input type="button" value="c" onclick="clr()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="display('1')"></td>
+            <td><input type="button" value="2" onclick="display('2')"></td>
+            <td><input type="button" value="3" onclick="display('3')"></td>
+            <td><input type="button" value="/" onclick="display('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="display('4')"></td>
+            <td><input type="button" value="5" onclick="display('5')"></td>
+            <td><input type="button" value="6" onclick="display('6')"></td>
+            <td><input type="button" value="-" onclick="display('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="display('7')"></td>
+            <td><input type="button" value="8" onclick="display('8')"></td>
+            <td><input type="button" value="9" onclick="display('9')"></td>
+            <td><input type="button" value="+" onclick="display('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="display('.')"></td>
+            <td><input type="button" value="0" onclick="display('0')"></td>
+            <td><input type="button" value="=" onclick="equate('=')"></td>
+            <td><input type="button" value="x" onclick="display('*')"></td>
+        </tr>
+    </table>
+</div>
+    <script type="text/javascript">
+        function clr() {
+            document.getElementById("result").value = "";
+        }
+        function display(val){
+            document.getElementById("result").value += val;
+        }
+        function equate() {
+            let x = document.getElementById("result").value;
+            let y = eval(x);
+            document.getElementById("result").value = y;
+        }
+    </script>
+</body>
+</html>
